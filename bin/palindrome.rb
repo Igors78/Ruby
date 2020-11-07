@@ -1,11 +1,11 @@
-def palindromeIndex(s)
-  if s.split("").reverse == s.split("")
-    return -1
-  end
-  array = s.split("")
-  for i in 0...(array.length / 2)
-    last = (array.length) - 1 - i
-    p last
+# frozen_string_literal: true
+
+def palindrome_index(str)
+  return -1 if str.split('').reverse == str.split('')
+
+  array = str.split('')
+  (0...(array.length / 2)).each do |i|
+    last = array.length - 1 - i
     if array[i] != array[last]
       if array.slice(0, i) + array.slice(i + 1, array.length - 1) == (array.slice(0, i) + array.slice(i + 1, array.length - 1)).reverse
         return i
@@ -18,5 +18,5 @@ def palindromeIndex(s)
   end
 end
 
-s = "aaaaacccaaabaa"
-p palindromeIndex (s)
+str = 'aaaaacccaaabaa'
+p palindrome_index(str)
