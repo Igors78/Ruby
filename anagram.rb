@@ -1,19 +1,18 @@
-def anagram(s)
-  if s.length.odd?
-    return -1
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+def anagram(str)
+  return -1 if str.length.odd?
+
+  str1 = str.split('').take(str.length / 2).sort
+  str2 = str.split('').slice(-str.length / 2, str.length - 1).sort
+  return 0 if str1 == str2
+
+  (0...str1.length).each do |i|
+    str2.delete_at(str2.index(str1[i])) if str2.index(str1[i])
   end
-  s1 = s.split("").take(s.length / 2).sort
-  s2 = s.split("").slice(-s.length / 2, s.length - 1).sort
-  if s1 == s2
-    return 0
-  end
-  for i in 0...s1.length
-    if s2.index(s1[i])
-      dif = s2.delete_at(s2.index(s1[i]))
-    end
-  end
-  s2.length
+  str2.length
 end
 
-s = "fdhlvosfpafhalll"
-p anagram(s)
+str = 'fdhlvosfpafhalll'
+p anagram(str)

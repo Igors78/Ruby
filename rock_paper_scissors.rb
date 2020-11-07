@@ -1,41 +1,34 @@
-lineWidth = 50
-puts("Вот вам юная мисс из России:".center(lineWidth))
-puts("Визг её был ужасен по силе.".center(lineWidth))
-puts("Он разил, как кинжал,-".center(lineWidth))
-puts("Так никто не визжал,".center(lineWidth))
-puts("Как визжала та Мисс из России.".center(lineWidth))
+# frozen_string_literal: true
+
+line_width = 50
+puts('Вот вам юная мисс из России:'.center(line_width))
+puts('Визг её был ужасен по силе.'.center(line_width))
+puts('Он разил, как кинжал,-'.center(line_width))
+puts('Так никто не визжал,'.center(line_width))
+puts('Как визжала та Мисс из России.'.center(line_width))
 
 gets
 
-# объявим массив человеческих названий позиций
-names = ["Камень", "Ножницы", "Бумага"]
-# на нулевой позиции - камень, на 1-й ножницы, на 2-й бумага
+names = %w[Камень Ножницы Бумага]
 
-# вызов rand(3) дает случайное число от 1 до 3, не включая 3 (см. документацию)
 computer_choice = rand(3)
 
-puts "введите вариант: 0 - камень, 1 - ножницы, 2 - бумага"
+puts 'введите вариант: 0 - камень, 1 - ножницы, 2 - бумага'
 
-# записываем выбор пользователя из консоли, преобразуя в число
 user_choice = gets.to_i
 
-# выводим человеческое название варианта выбранного компом
-puts "Компьютер выбрал: " + names[computer_choice]
+puts "Компьютер выбрал: #{names[computer_choice]}"
 
-# выводим человеческое название варианта выбранного человеком
-puts "Вы выбрали: " + names[user_choice]
-
-# в наших числах логика игры такая:
-# 0 бьет 1, 1 бьет 2, но 2 бьет 0
+puts "Вы выбрали: #{names[user_choice]}"
 
 if user_choice == computer_choice
-  puts "Ничья"
-elsif user_choice == 0 && computer_choice == 1 # у вас 0-камень И у компьютера 1-ножницы
-  puts "Победили Вы"
-elsif user_choice == 1 && computer_choice == 2 # у вас ножницы И у компа бумага
-  puts "Победили Вы"
-elsif user_choice == 2 && computer_choice == 0 # бумага И камень
-  puts "Победили Вы"
-else # во ВСЕХ ОСТАЛЬНЫХ случаях победа за компом
-  puts "Победил Компьютер"
+  puts 'Ничья'
+elsif user_choice.zero? && computer_choice == 1
+  puts 'Победили Вы'
+elsif user_choice == 1 && computer_choice == 2
+  puts 'Победили Вы'
+elsif user_choice == 2 && computer_choice.zero?
+  puts 'Победили Вы'
+else
+  puts 'Победил Компьютер'
 end
