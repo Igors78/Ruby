@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 if File.exist?('./text/quotes.txt')
   fil = File.new('./text/quotes.txt', 'r:UTF-8')
   content = fil.read
