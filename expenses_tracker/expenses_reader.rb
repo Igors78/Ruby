@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 # Подключаем парсер rexml и библиотеку date для эффективного использования дат
 require 'rexml/document'
@@ -73,7 +74,7 @@ end
 
 # Пришло время выводить статистику на экран в цикле пройдемся по всем месяцам и
 # начнем с первого
-current_month = amount_by_day.keys.sort[0].strftime('%B %Y')
+current_month = amount_by_day.keys.min.strftime('%B %Y')
 
 # Выводим заголовок для первого месяца
 puts "------[ #{current_month}, всего потрачено: " \

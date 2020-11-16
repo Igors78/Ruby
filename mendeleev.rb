@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 table = {
   'H' => 'Кавендиш',
   'He' => 'Локьер, Жансен, Рамзай',
