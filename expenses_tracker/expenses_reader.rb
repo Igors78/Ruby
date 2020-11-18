@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Подключаем парсер rexml и библиотеку date для эффективного использования дат
 require 'rexml/document'
 require 'date'
