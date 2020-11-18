@@ -1,4 +1,3 @@
-
 # Подключаем парсер rexml и библиотеку date для эффективного использования дат
 require 'rexml/document'
 require 'date'
@@ -7,9 +6,7 @@ require 'date'
 file_name = File.dirname(__FILE__) + '/my_expenses.xml'
 
 # Если файл не найдет, завершаем программу
-unless File.exist?(file_name)
-  abort "Извиняемся, хозяин, файлик #{file_name} не найден."
-end
+abort "Извиняемся, хозяин, файлик #{file_name} не найден." unless File.exist?(file_name)
 
 # Открываем файл и записываем дескриптор в переменную file
 file = File.new(file_name)
@@ -73,7 +70,7 @@ end
 
 # Пришло время выводить статистику на экран в цикле пройдемся по всем месяцам и
 # начнем с первого
-current_month = amount_by_day.keys.sort[0].strftime('%B %Y')
+current_month = amount_by_day.keys.min.strftime('%B %Y')
 
 # Выводим заголовок для первого месяца
 puts "------[ #{current_month}, всего потрачено: " \
