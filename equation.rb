@@ -3,7 +3,7 @@
 def print_root(x_real, x_complex)
   puts 'Solution:'
   print x_real
-  print ' +' if x_complex > 0
+  print ' +' if x_complex.positive?
   print " #{x_complex} * i" if x_complex != 0
   puts
 end
@@ -22,10 +22,10 @@ c = gets.to_f
 abort "It is linear equation! x = #{-c / b}" if a.zero?
 
 # Считаем дискриминант
-discr = b * b - 4 * a * c
+discr = b**2 - 4 * a * c
 
 # Комплексные числа пошли
-if discr < 0
+if discr.negative?
   # Вычисляем действительную и мнимую часть первого корня
   x1_real = -b / (2 * a)
   x1_complex = Math.sqrt(-discr) / (2 * a)
