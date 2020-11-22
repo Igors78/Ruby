@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def print_root(x_real, x_complex)
   puts 'Solution:'
   print x_real
