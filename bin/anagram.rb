@@ -31,4 +31,4 @@ class Anagram
 end
 
 string = 'fdhlvosfpafhalll'
-p anagramma = Anagram.new(string).make_check_anagram
+p Anagram.new(string).make_check_anagram
