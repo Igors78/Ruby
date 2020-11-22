@@ -1,2 +1,2 @@
 # Ruby
--Practicing basic ruby with GoodProgrammer.ru
+- Practicing basic ruby with GoodProgrammer.ru
